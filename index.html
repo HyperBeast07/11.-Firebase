@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body class="mx-auto max-w-3xl m-12">
+    <div>
+        <h2 class="title text-center text-2xl font-bold mb-8">Recipe Book</h2>
+    </div>
+        <div class="start align-to-center grid grid-cols-2">
+            <div class="recipe-container border rounded-xl p-4 col-span-2 left-row1">
+                <div>
+                    <form class="recipe-form">
+                        <label for="recipe" class="block mb-2 font-bold">Add a new recipe</label>
+                        <div class="flex items-center mt-1">
+                            <input type="text" name="recipe" class="border px-4 py-2 border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-pink-400 flex-1 shadow-lg">
+                            <button type="submit" class="ml-2 px-4 py-2 bg-pink-500 text-white rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600">Add</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+
+            <!-- <div class="col-span-1">
+                <div class="border rounded-xl p-4 ">
+                    <div class="font-bold text-center">Quote of the day</div>
+                    <i>“Cooking is like painting or writing a song. Just as there are only so many notes or colors, there are only so many flavors—it’s how you combine them that sets you apart.”
+                        ~ Wolfgang Puck</i>
+                </div>
+
+            </div>
+         -->
+            <div class="border p-4 rounded-xl mr-4 mt-4 recipe-box">
+                <div class="mb-2 font-bold">
+                    Recipes
+                </div>
+                <ul class="recipe-list">
+                        
+                </ul>
+            </div>
+    
+            <div class="hidden mt-4 border border-white rounded-xl p-4 description-container">
+                <label class="block mb-2 font-bold" for="description">Description</label>
+                <textarea id="description" name="textarea" class="p-2 rounded-md shadow-lg description-box mb-2"></textarea>
+                <div class="description-content"></div>
+                <button type="submit" class="mt-2 mb-4 hidden px-4 py-2 bg-red-600 text-white rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 edit-button">Edit</button>  
+                <button type="submit" class="px-4 py-2 bg-pink-500 text-white rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 description-button">Save</button>
+            </div>
+
+            <div class="hidden mt-4 border p-4 rounded-xl col-span-2 ingredients-container">
+                <div class="font-bold mb-2">
+                    Ingredients
+                </div>
+                <div>
+                    <form class="ingredients-form mb-2">
+                        <div class="flex items-center mt-1">
+                            <input type="text" name="ingredient" placeholder="add here..." class="border mb-2 px-4 py-2 w-min border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-pink-400 flex-1 shadow-lg">
+                        </div>
+                    </form>
+                </div>
+                <ul class="ingredient-list">
+                    <li class="mb-4">
+                        <div class="flex justify-between border-2 rounded-lg p-2 ">
+                            <span>50g of flour, mixed evenly, boiled, rinsed with lukewarm water</span>
+                            <div class="flex flex-row items-center">
+                                <button type="submit" class="mr-1 block h-9 w-16 py-2 bg-pink-500 text-white text-sm rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 edit-ingredient">Edit</button>
+                                <button type="submit" class="px-4 h-9 py-2 bg-pink-500 text-white text-sm rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 delete-ingredient">Delete</button>
+                                <button type="submit" class="px-4 h-9 py-2 bg-pink-500 text-white text-sm rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 save-ingredient hidden">Save</button>
+                            </div>
+                        </div>
+                    </li> 
+                    <li class="mb-4">
+                        <div class="ingredient-container flex items-center justify-between border-2 rounded-lg p-2 ">
+                            <span>Banana</span>
+                            <div class="flex flex-row items-center">
+                                <button type="submit" class="mr-1 block h-9 w-16 py-2 bg-pink-500 text-white text-sm rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 edit-ingredient">Edit</button>
+                                <button type="submit" class="px-4 h-9 py-2 bg-pink-500 text-white text-sm rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 delete-ingredient">Delete</button>
+                                <button type="submit" class="px-4 h-9 py-2 bg-pink-500 text-white text-sm rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 save-ingredient hidden">Save</button>
+                            </div>
+                            
+                        </div>
+                    </li> 
+                    <li class="mb-4">
+                        <div class="flex justify-between border-2 rounded-lg p-2 ">
+                            <textarea class="hidden edit-ingredient-box" name=""></textarea>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates nobis natus, pariatur eveniet at harum laborum vero magni, exercitationem doloribus expedita! Ipsum aliquam mollitia deleniti molestias magni totam, saepe at.</span>
+                            <div class="flex flex-row items-center">
+                                <button type="submit" class="mr-1 block h-9 w-16 py-2 bg-pink-500 text-white text-sm rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 edit-ingredient">Edit</button>
+                                <button type="submit" class="px-4 h-9 py-2 bg-pink-500 text-white text-sm rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 delete-ingredient">Delete</button>
+                                <button type="submit" class="px-4 h-9 py-2 bg-pink-500 text-white text-sm rounded-md hover:bg-blue-800 focus:outline-none focus:ring focus:bg-blue-600 save-ingredient hidden">Save</button>
+                            </div>
+                        </div>
+                    </li>  
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>

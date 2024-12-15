@@ -1,0 +1,49 @@
+body {
+    font-family: "Montserrat";
+    background-color: #bfd2f2;
+    color: black;
+    
+}
+
+
+
+.description-box {
+    overflow: auto;
+    height: 150px;
+    width: 350px;
+    resize: none;
+
+}
+
+
+.left-row1 {
+    height: 115px;
+    margin-right: 400px;
+}
+
+
+
+.description-button {
+    position: relative;
+    left: 275px;
+  
+}
+
+.recipe-box {
+    overflow: auto;
+    height: 289px;
+}
+
+.edit-ingredient-box {
+    resize: none; 
+    width: 600px;
+    overflow: auto;
+}
+
+.align-to-center {
+    position: relative;
+    left: 192px;
+}
+
+
+
